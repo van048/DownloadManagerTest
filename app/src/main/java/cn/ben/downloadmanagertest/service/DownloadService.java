@@ -1,4 +1,4 @@
-package cn.ben.downloadmanagertest;
+package cn.ben.downloadmanagertest.service;
 
 import android.app.DownloadManager;
 import android.app.Service;
@@ -15,6 +15,8 @@ import android.support.annotation.Nullable;
 import android.webkit.MimeTypeMap;
 
 import java.io.File;
+
+import cn.ben.downloadmanagertest.util.MLog;
 
 public class DownloadService extends Service {
 

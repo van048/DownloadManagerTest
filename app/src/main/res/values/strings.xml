@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">DownloadManagerTest</string>
+    <string name="download">download</string>
+    <string name="compatible_download">compatible download</string>
 </resources>
