@@ -72,6 +72,11 @@ public class DownloadServiceCompatibleWithN extends Service {
         Intent intent = new Intent(Intent.ACTION_VIEW);
         //沒有在activity環境下啟動
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        //Android7.0执行了“StrictMode API 政策禁”
+        //可以用FileProvider来解决这一问题
+        //私有目录被限制访问
+        //“私有目录被限制访问“ 是指在Android7.0中为了提高私有文件的安全性，面向 Android N 或更高版本的应用私有目录将被限制访问。这点类似iOS的沙盒机制。
+        //" StrictMode API 政策" 是指禁止向你的应用外公开 file:// URI。 如果一项包含文件 file:// URI类型 的 Intent 离开你的应用，应用失败，并出现 FileUriExposedException 异常。
         intent.setDataAndType(Uri.fromFile(new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "1.apk")), "application/vnd.android.package-archive");// TODO: 2016/10/17
         context.startActivity(intent);
     }
